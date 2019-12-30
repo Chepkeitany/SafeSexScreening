@@ -1,0 +1,29 @@
+# The namespace to deploy your application
+global:
+  namespace: safesexscreen2
+
+# Frontend web service.
+frontend:
+  name: ss2frontend
+  port: 80
+  replicaCount: 1
+  proxy:
+    incomingPath: /ss2frontend/
+    containerPath: "/"
+  image:
+    repository: build.hdap.gatech.edu/ss2frontend
+    tag: latest
+    pullPolicy: Always
+
+# Backend REST API web service.
+backend:
+  name: ss2backend
+  port: 80
+  replicaCount: 1
+  proxy:
+    incomingPath: /ss2backend/
+    containerPath: "/"
+  image:
+    repository: build.hdap.gatech.edu/ss2backend
+    tag: latest
+    pullPolicy: Always

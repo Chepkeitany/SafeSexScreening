@@ -1,0 +1,5 @@
+/app/node_modules
+
+.git
+node_modules
+app/build
